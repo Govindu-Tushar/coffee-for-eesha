@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --espresso-black: #17110E;
+  --dark-roast: #2B1B16;
+  --mocha-brown: #6F4E37;
+  --caramel: #C58B55;
+  --cream: #F5EBDD;
+  --warm-ivory: #FFF9F0;
+  --soft-gold: #D9B47C;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--espresso-black);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: var(--caramel);
+}
+
+::selection {
+  background: rgba(197, 139, 85, 0.4);
+  color: #FFF9F0;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #17110E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3D271F;
+  border-radius: 4px;
+  border: 2px solid #17110E;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C58B55;
+}
+
+/* Glassmorphism Classes */
+.glass-coffee {
+  background: rgba(33, 24, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 180, 124, 0.15);
+}
+
+.glass-pill {
+  background: rgba(43, 27, 22, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 139, 85, 0.25);
+}
+
+.glass-card-editorial {
+  background: linear-gradient(135deg, rgba(43, 27, 22, 0.75) 0%, rgba(23, 17, 14, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(217, 180, 124, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Film grain effect */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Text glow accents */
+.text-gold-glow {
+  text-shadow: 0 0 25px rgba(217, 180, 124, 0.45);
+}
+
+.text-caramel-glow {
+  text-shadow: 0 0 30px rgba(197, 139, 85, 0.4);
+}
+
+/* Luxury button styling */
+.btn-gold {
+  background: linear-gradient(135deg, #E3A857 0%, #C58B55 100%);
+  color: #17110E;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(197, 139, 85, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(217, 180, 124, 0.5);
+  background: linear-gradient(135deg, #EED7A1 0%, #D49D69 100%);
+}
+
+.btn-ghost-coffee {
+  background: rgba(43, 27, 22, 0.5);
+  border: 1px solid rgba(217, 180, 124, 0.3);
+  color: #F5EBDD;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost-coffee:hover {
+  background: rgba(61, 39, 31, 0.8);
+  border-color: rgba(217, 180, 124, 0.6);
+  color: #FFF9F0;
+  transform: translateY(-2px);
+}
+
+/* Image sequence canvas */
+.scrolly-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
